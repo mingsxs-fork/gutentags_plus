@@ -237,9 +237,9 @@ function! s:GscopeFind(bang, what, ...)
 		return 0
 	endif
 	call s:GscopeAdd()
-	let ncol = col('.')
-	let nrow = line('.')
-	let nbuf = winbufnr('%')
+	"let ncol = col('.')
+	"let nrow = line('.')
+	"let nbuf = winbufnr('%')
 	let text = ''
 	if a:what == '0' || a:what == 's'
 		let text = 'symbol "'.keyword.'"'
@@ -302,9 +302,9 @@ function! s:GscopeFind(bang, what, ...)
 	endtry
 	let &g:efm = save_global
 	let &l:efm = save_local
-	if winbufnr('%') == nbuf
-		call cursor(nrow, ncol)
-	endif
+	"if winbufnr('%') == nbuf
+	"	call cursor(nrow, ncol)
+	"endif
 	if success != 0 && a:bang == 0 && ((a:what != 'g' && a:what != '1') || getqflist({'size':0})['size'] > 1)
 		let height = get(g:, 'gutentags_plus_height', 6)
 		call s:quickfix_open(height)
