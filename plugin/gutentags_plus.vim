@@ -708,6 +708,7 @@ nnoremap <silent> <expr> <Plug>GscopeFindCtag       <SID>FindCwordCmd('GscopeFin
 if get(g:, 'gutentags_plus_nomap', 0) == 0
 	nmap <silent> <leader>cs <Plug>GscopeFindSymbol
 	nmap <silent> <leader>cg <Plug>GscopeFindDefinition
+	nmap <silent> <leader>vcg :vsplit<cr><Plug>GscopeFindDefinition
 	nmap <silent> <leader>cc <Plug>GscopeFindCallingFunc
 	nmap <silent> <leader>ct <Plug>GscopeFindText
 	nmap <silent> <leader>ce <Plug>GscopeFindEgrep
