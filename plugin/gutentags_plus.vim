@@ -184,7 +184,7 @@ function! s:quickfix_open(size)
 		endif
 	endfunc
 	let s:quickfix_open = 0
-	let l:winnr = winnr()			
+	let l:winnr = winnr()
 	noautocmd windo call s:WindowCheck(0)
 	noautocmd silent! exec ''.l:winnr.'wincmd w'
 	if s:quickfix_open != 0
@@ -205,7 +205,6 @@ function! s:quickfix_open(size)
 	nnoremap <silent> <buffer> t  <C-w><CR><C-w>T
 	nnoremap <silent> <buffer> T  <C-w><CR><C-w>TgT<C-W><C-W>
 	nnoremap <silent> <buffer> v  <C-w><CR><C-w>H<C-W>b<C-W>J<C-W>t
-	exe 'nnoremap <silent> <buffer> go <CR>:copen<CR>'
 	exe 'nnoremap <silent> <buffer> q  :cclose<CR>:winc p<CR>'
 endfunc
 
